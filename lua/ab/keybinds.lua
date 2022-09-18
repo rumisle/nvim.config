@@ -8,4 +8,3 @@ map('n', '*', '*N')
 map('n', '<leader>r', ':luafile $MYVIMRC<CR>')
 map('n', '<leader>R', '<CMD>PackerInstall<CR>')
 
-print('no')

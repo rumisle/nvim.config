@@ -34,7 +34,7 @@ function U.mappings(client, buf)
   -- TODO: Make rename trigger by F2
   map('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   -- TODO: Make code action trigger by alt enter
-  map('n', '<leader>c', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  map('n', '<leader>.', '<cmd>CodeActionMenu<CR>', opts)
   -- map('v', '<leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', opts)
   map('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   map('n', '[g', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
@@ -45,7 +45,6 @@ function U.mappings(client, buf)
 
   -- formatting
   if client.resolved_capabilities.document_formatting then
-    print('haha')
     map('n', '<C-k>', vim.lsp.buf.formatting_sync, { desc = 'format code' })
   end
 

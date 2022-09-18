@@ -10,10 +10,10 @@ return require('packer').startup({
   function(use)
     -- package manager
     use('wbthomason/packer.nvim')
-    
+
     -- prereq for telescope
     use('nvim-lua/plenary.nvim')
-    
+
     -- text objects
     use('kana/vim-textobj-user') -- prereq
     use('sgur/vim-textobj-parameter')
@@ -71,36 +71,48 @@ return require('packer').startup({
     })
 
     -- lsp
-    use({
+    use { 'hrsh7th/cmp-nvim-lsp' }
+
+    use {
       'neovim/nvim-lspconfig',
-      event = 'BufRead',
+      -- event = 'BufRead',
       config = function()
         require('ab.plugins.lsp.servers')
       end,
-      requires = {
-        { 'hrsh7th/cmp-nvim-lsp' },   
-      },
-    })
+      after = 'cmp-nvim-lsp',
+    }
 
-    use({
+    use {
+      'hrsh7th/nvim-cmp',
+      event = 'InsertEnter',
+      config = function()
+          require('ab.plugins.lsp.nvim-cmp')
+      end,
+    }
+
+    use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }
+    use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }
+
+    use {
       'jose-elias-alvarez/null-ls.nvim',
       event = 'BufRead',
       config = function()
         require('ab.plugins.lsp.null-ls')
       end,
-    })
+    }
 
-    use({
-        {
-          'hrsh7th/nvim-cmp',
-          event = 'InsertEnter',
-          config = function()
-              require('ab.plugins.lsp.nvim-cmp')
-          end,
-        },
-        { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-        { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-    })
+    use {
+      'kosayoda/nvim-lightbulb',
+      requires = 'antoinemadec/FixCursorHold.nvim',
+      config = function()
+        require('nvim-lightbulb').setup({autocmd = {enabled = true}})
+      end
+    }
+
+    use {
+      'weilbith/nvim-code-action-menu',
+      cmd = 'CodeActionMenu',
+    }
 
     -- color themes
     use('savq/melange')
