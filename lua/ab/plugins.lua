@@ -16,7 +16,7 @@ return require('packer').startup({
 
     -- text objects
     use('kana/vim-textobj-user') -- prereq
-    use('sgur/vim-textobj-parameter')
+    use { 'sgur/vim-textobj-parameter', after = 'vim-textobj-user' }
 
     -- misc
     use('andymass/vim-matchup')
