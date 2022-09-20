@@ -70,6 +70,8 @@ return require('packer').startup({
       event = 'CursorHold',
     })
 
+    use('wellle/context.vim')
+
     -- lsp
     use { 'hrsh7th/cmp-nvim-lsp' }
 
