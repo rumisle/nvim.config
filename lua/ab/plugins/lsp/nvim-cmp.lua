@@ -39,6 +39,7 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-j>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i'}),
     ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i'}),
