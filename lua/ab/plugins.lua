@@ -20,7 +20,7 @@ return require('packer').startup({
 
     -- misc
     use('andymass/vim-matchup')
-    use('tpope/vim-endwise')
+    -- use('tpope/vim-endwise')
     use('rstacruz/vim-closer')
     use({
         'norcalli/nvim-colorizer.lua',
