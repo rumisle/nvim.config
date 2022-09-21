@@ -83,11 +83,11 @@ end
 
 if U.has_executable("clangd") then
   lsp.clangd.setup {
-    flags = flags,
     capabilities = capabilities,
     on_attach = on_attach,
     filetypes = { "c", "cpp", "cc" },
     flags = {
+      allow_incremental_sync = true,
       debounce_text_changes = 500,
     },
   }
