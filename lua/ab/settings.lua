@@ -10,6 +10,7 @@ o.expandtab = true -- TODO: disable for Makefile
 
 -- basic editor settings
 o.number = true
+o.relativenumber = true
 o.smartcase = true
 o.ignorecase = true
 o.hlsearch = true
