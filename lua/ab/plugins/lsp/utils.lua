@@ -51,6 +51,8 @@ function U.mappings(client, buf)
   if client.resolved_capabilities.document_range_formatting then
     map('x', '<C-k>', vim.lsp.buf.range_formatting, { desc = 'range format' })
   end
+
+  require("lsp-inlayhints").on_attach(client, buf)
 end
 
 return U

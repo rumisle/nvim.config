@@ -76,6 +76,14 @@ return require('packer').startup({
     use { 'hrsh7th/cmp-nvim-lsp' }
 
     use {
+      "lvimuser/lsp-inlayhints.nvim",
+      config = function()
+        require("lsp-inlayhints").setup()
+        -- require("lsp-inlayhints").on_attach(client, bufnr)
+      end,
+    }
+
+    use {
       'neovim/nvim-lspconfig',
       -- event = 'BufRead',
       config = function()

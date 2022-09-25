@@ -95,3 +95,12 @@ else
   vim.notify("clangd not found!", vim.log.levels.WARN, { title = "nvim-config" })
 end
 
+if U.has_executable("cmake-language-server") then
+  lsp.cmake.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flags,
+  }
+else
+  vim.notify("clangd not found!", vim.log.levels.WARN, { title = "nvim-config" })
+end
