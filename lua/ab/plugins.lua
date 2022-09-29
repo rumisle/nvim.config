@@ -24,7 +24,14 @@ return require('packer').startup({
     -- misc
     use('andymass/vim-matchup')
     -- use('tpope/vim-endwise')
-    use('rstacruz/vim-closer')
+    -- use('rstacruz/vim-closer') -- buggy, deprecated
+    use {
+      "windwp/nvim-autopairs",
+       config = function()
+         require("nvim-autopairs").setup {}
+       end
+    }
+
     use({
         'norcalli/nvim-colorizer.lua',
         -- event = 'CursorHold',
