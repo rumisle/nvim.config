@@ -18,6 +18,9 @@ return require('packer').startup({
     use('kana/vim-textobj-user') -- prereq
     use { 'sgur/vim-textobj-parameter', after = 'vim-textobj-user' }
 
+    -- languages
+    use { 'ziglang/zig.vim' }
+
     -- misc
     use('andymass/vim-matchup')
     -- use('tpope/vim-endwise')
