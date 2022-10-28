@@ -19,7 +19,12 @@ return require('packer').startup({
     use { 'sgur/vim-textobj-parameter', after = 'vim-textobj-user' }
 
     -- languages
-    use { 'ziglang/zig.vim' }
+    use {
+      'ziglang/zig.vim',
+      config = function()
+        vim.g.zig_fmt_parse_errors = false
+      end
+    }
 
     -- misc
     use('andymass/vim-matchup')
