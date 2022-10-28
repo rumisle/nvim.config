@@ -38,3 +38,4 @@ g.maplocalleader = ' '
 -- vim.highlight.create("Pmenu", { guibg = "None", guifg = "None" }, false)
 o.termguicolors = true
 vim.cmd("colorscheme alabaster_dark")
+vim.highlight.create("Normal", { guibg = "None", guifg = "None" }, false)
