@@ -45,10 +45,10 @@ cmp.setup({
     ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i'}),
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp', max_item_count = 10 },
-    --{ name = 'luasnip', max_item_count = 10 },
-    { name = 'path', max_item_count = 10 },
-    { name = 'buffer', max_item_count = 10 },
+    { name = 'nvim_lsp', max_item_count = 50 },
+    --{ name = 'luasnip', max_item_count = 50 },
+    { name = 'path', max_item_count = 50 },
+    { name = 'buffer', max_item_count = 50 },
   }),
   formatting = {
     format = function(entry, item)
