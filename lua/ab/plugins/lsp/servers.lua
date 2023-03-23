@@ -24,7 +24,7 @@ vim.diagnostic.config({
 
 -- language servers
 if U.has_executable('lua-language-server') then
-  lsp.sumneko_lua.setup({
+  lsp.lua_ls.setup({
     flags = flags,
     capabilities = capabilities,
     on_attach = on_attach,

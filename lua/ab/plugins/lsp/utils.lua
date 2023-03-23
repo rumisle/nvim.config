@@ -7,7 +7,7 @@ function U.capabilities()
   -- you should advertise it to LSP servers..
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-  return require('cmp_nvim_lsp').update_capabilities(capabilities)
+  return require('cmp_nvim_lsp').default_capabilities(capabilities)
 end
 
 function U.has_executable(name)
@@ -44,11 +44,11 @@ function U.mappings(client, buf)
   --
 
   -- formatting
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.document_formatting then
     map('n', '<C-k>', vim.lsp.buf.formatting_sync, { desc = 'format code' })
   end
 
-  if client.resolved_capabilities.document_range_formatting then
+  if client.server_capabilities.document_range_formatting then
     map('x', '<C-k>', vim.lsp.buf.range_formatting, { desc = 'range format' })
   end
 

@@ -87,6 +87,8 @@ return require('packer').startup({
 
     use('wellle/context.vim')
 
+    use('github/copilot.vim')
+
     -- lsp
     use { 'hrsh7th/cmp-nvim-lsp' }
 
@@ -141,7 +143,7 @@ return require('packer').startup({
 
     -- color themes
     use('savq/melange')
-    use('p00f/alabaster_dark.nvim')
+    use('p00f/alabaster.nvim')
 
   end,
   config = {

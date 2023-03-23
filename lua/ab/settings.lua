@@ -38,5 +38,8 @@ g.maplocalleader = ' '
 -- color themes
 -- vim.highlight.create("Pmenu", { guibg = "None", guifg = "None" }, false)
 o.termguicolors = true
-vim.cmd("colorscheme alabaster_dark")
-vim.highlight.create("Normal", { guibg = "None", guifg = "None" }, false)
+vim.cmd("colorscheme alabaster")
+
+-- transparent backgruond
+-- vim.highlight.create("Normal", { guibg = "None", guifg = "None" }, false)
+vim.api.nvim_set_hl(0, "Normal", { bg = "None", fg = "None" })
