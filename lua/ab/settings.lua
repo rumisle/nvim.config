@@ -17,6 +17,7 @@ o.hlsearch = true
 o.incsearch = true
 o.mouse = "a"
 o.cursorline = true
+o.cmdheight = 0
 
 -- disable carzy error and warning hint
 o.signcolumn = "no"
@@ -38,7 +39,7 @@ g.maplocalleader = ' '
 -- color themes
 -- vim.highlight.create("Pmenu", { guibg = "None", guifg = "None" }, false)
 o.termguicolors = true
-vim.cmd("colorscheme alabaster")
+vim.cmd("colorscheme lunaperche")
 
 -- transparent backgruond
 -- vim.highlight.create("Normal", { guibg = "None", guifg = "None" }, false)
