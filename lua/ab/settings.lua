@@ -16,7 +16,7 @@ o.hlsearch = true
 o.incsearch = true
 o.mouse = "a"
 o.cursorline = true
-o.cmdheight = 0
+-- o.cmdheight = 0
 
 -- disable carzy error and warning hint
 o.signcolumn = "no"
