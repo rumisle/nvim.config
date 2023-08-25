@@ -13,7 +13,7 @@ local colors = {
 local bubbles_theme = {
   normal = {
     a = { fg = colors.black, bg = colors.orange },
-    b = { fg = colors.black, bg = colors.none },
+    b = { fg = colors.white, bg = colors.none },
     c = { fg = colors.violet, bg = colors.none },
   },
 
@@ -22,9 +22,9 @@ local bubbles_theme = {
   replace = { a = { fg = colors.black, bg = colors.red } },
 
   inactive = {
-    a = { fg = colors.white, bg = colors.white },
-    b = { fg = colors.white, bg = colors.white },
-    c = { fg = colors.black, bg = colors.white },
+    a = { fg = colors.white, bg = colors.none },
+    b = { fg = colors.white, bg = colors.none },
+    c = { fg = colors.black, bg = colors.none },
   },
 }
 
@@ -36,16 +36,16 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {
-      -- { 'mode', separator = { left = '' }, right_padding = 2 },
-      { 'mode', separator = { left = '' }, right_padding = 2 },
+      { 'mode', separator = { left = '' }, right_padding = 2 },
+      -- { 'mode', separator = { left = '' }, right_padding = 2 },
     },
     lualine_b = { 'filename', 'branch' },
     lualine_c = { 'fileformat' },
     lualine_x = {},
     lualine_y = { 'filetype', 'progress' },
     lualine_z = {
-      -- { 'location', separator = { right = '' }, left_padding = 2 },
-      { 'location', separator = { right = '' }, left_padding = 2 },
+      { 'location', separator = { right = '' }, left_padding = 2 },
+      -- { 'location', separator = { right = '' }, left_padding = 2 },
     },
   },
   inactive_sections = {
