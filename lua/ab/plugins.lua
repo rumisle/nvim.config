@@ -23,6 +23,7 @@ return require('packer').startup({
       'ziglang/zig.vim',
       config = function()
         vim.g.zig_fmt_parse_errors = false
+        vim.g.zig_fmt_autosave = false
       end
     }
 
