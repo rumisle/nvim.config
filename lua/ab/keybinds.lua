@@ -8,6 +8,9 @@ map('n', '*', '*N')
 map('n', '<leader>r', ':luafile $MYVIMRC<CR>')
 map('n', '<leader>R', '<CMD>PackerInstall<CR>')
 
+-- quick save
+map('n', '<leader>w', ':w<CR>')
+
 -- toggle inlay hints
 map('n', '<leader>i', ":lua require('lsp-inlayhints').toggle()<CR>")
 
