@@ -107,6 +107,8 @@ end
 
 if U.has_executable("ruff-lsp") then
   lsp.ruff_lsp.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
     init_options = {
       settings = {
         args = {},
