@@ -37,11 +37,11 @@ require("lazy").setup({
     },
 
     {
-        'norcalli/nvim-colorizer.lua',
-        -- event = 'CursorHold',
-        config = function()
-            require('colorizer').setup()
-        end,
+      'norcalli/nvim-colorizer.lua',
+      -- event = 'CursorHold',
+      config = function()
+          require('colorizer').setup()
+      end,
     },
 
     -- fancy
@@ -56,7 +56,7 @@ require("lazy").setup({
     -- navigation and fuzzy search
     -- TODO: update tag.
     {
-      'nvim-telescope/telescope.nvim', tag = '0.1.0',
+      'nvim-telescope/telescope.nvim', tag = '0.1.5',
       dependencies = { 'nvim-lua/plenary.nvim' },
       config = function()
         require('ab.plugins.telescope')
