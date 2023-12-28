@@ -105,14 +105,16 @@ else
   vim.notify("camke-language-server not found in path!", vim.log.levels.WARN, { title = "nvim-config" })
 end
 
-if U.has_executable("pyright") then
-  lsp.pyright.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = flags,
+if U.has_executable("ruff-lsp") then
+  lsp.ruff_lsp.setup{
+    init_options = {
+      settings = {
+        args = {},
+      }
+    }
   }
 else
-  vim.notify("pyright not found in path!", vim.log.levels.WARN, { title = "nvim-config" })
+  vim.notify("ruff-lsp not found in path.", vim.log.levels.WARN, { title = "nvim-config" })
 end
 
 if U.has_executable("zls") then
