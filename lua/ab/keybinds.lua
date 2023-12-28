@@ -6,7 +6,7 @@ map('n', '*', '*N')
 
 -- reload configs
 map('n', '<leader>r', ':luafile $MYVIMRC<CR>')
-map('n', '<leader>R', '<CMD>PackerInstall<CR>')
+map('n', '<leader>l', ':Lazy profile<CR>')
 
 -- quick save
 map('n', '<leader>w', ':w<CR>')
