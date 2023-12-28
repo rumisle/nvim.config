@@ -1,157 +1,150 @@
--- automatically run :PackerCompile whenever
--- plugins.lua is updated with an autocommand
-vim.api.nvim_create_autocmd('BufWritePost', {
-  group = vim.api.nvim_create_augroup('PACKER', { clear = true }),
-  pattern = 'plugins.lua',
-  command = 'source <afile> | PackerCompile',
-})
+-- install lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup({
-  function(use)
-    -- package manager
-    use('wbthomason/packer.nvim')
-
-    -- prereq for telescope
-    use('nvim-lua/plenary.nvim')
-
+require("lazy").setup({
     -- text objects
-    use('kana/vim-textobj-user') -- prereq
-    use { 'sgur/vim-textobj-parameter', after = 'vim-textobj-user' }
+    { 'sgur/vim-textobj-parameter', dependencies = { 'kana/vim-textobj-user' } },
 
     -- languages
-    use {
+    {
       'ziglang/zig.vim',
       config = function()
         vim.g.zig_fmt_parse_errors = false
         vim.g.zig_fmt_autosave = false
       end
-    }
+    },
 
     -- misc
-    use('andymass/vim-matchup')
-    -- use('tpope/vim-endwise')
-    -- use('rstacruz/vim-closer') -- buggy, deprecated
-    use {
+    'andymass/vim-matchup',
+    -- 'tpope/vim-endwise',
+    -- 'rstacruz/vim-closer', -- buggy, deprecated
+    {
       "windwp/nvim-autopairs",
        config = function()
          require("nvim-autopairs").setup {}
        end
-    }
+    },
 
-    use({
+    {
         'norcalli/nvim-colorizer.lua',
         -- event = 'CursorHold',
         config = function()
             require('colorizer').setup()
         end,
-    })
+    },
 
     -- fancy
-    use {
+    {
       'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+      dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
       config = function()
         require('ab.plugins.lualine')
       end
-    }
+    },
 
     -- navigation and fuzzy search
-    use {
+    -- TODO: update tag.
+    {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
+      dependencies = { 'nvim-lua/plenary.nvim' },
       config = function()
         require('ab.plugins.telescope')
       end
-    }
+    },
 
-    use {
+    -- TODO: consider removing as i rarely use it
+    {
       'phaazon/hop.nvim',
       config = function()
         require('hop').setup()
         vim.keymap.set('n', 'F', '<cmd>HopWord<cr>')
       end
-    }
+    },
 
     -- editing
-    use({
+    {
       'numToStr/Comment.nvim',
       event = 'BufRead',
       config = function()
         require('Comment').setup()
       end,
-    })
+    },
 
-    use({
+    {
       'AndrewRadev/splitjoin.vim',
       -- NOTE: splitjoin won't work with `BufRead` event
       event = 'CursorHold',
-    })
+    },
 
-    use('wellle/context.vim')
+    'wellle/context.vim',
 
-    use('github/copilot.vim')
+    'github/copilot.vim',
 
     -- lsp
-    use { 'hrsh7th/cmp-nvim-lsp' }
+    'hrsh7th/cmp-nvim-lsp',
 
-    use {
+    {
       "lvimuser/lsp-inlayhints.nvim",
       config = function()
         require("lsp-inlayhints").setup()
         -- require("lsp-inlayhints").on_attach(client, bufnr)
       end,
-    }
+    },
 
-    use {
+    {
       'neovim/nvim-lspconfig',
       -- event = 'BufRead',
       config = function()
         require('ab.plugins.lsp.servers')
       end,
-      after = 'cmp-nvim-lsp',
-    }
+      -- after = 'cmp-nvim-lsp',
+    },
 
-    use {
+    {
       'hrsh7th/nvim-cmp',
       event = 'InsertEnter',
       config = function()
           require('ab.plugins.lsp.nvim-cmp')
       end,
-    }
+    },
 
-    use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }
-    use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }
+    { 'hrsh7th/cmp-path' },
+    { 'hrsh7th/cmp-buffer' },
 
-    use {
+    {
       'jose-elias-alvarez/null-ls.nvim',
       event = 'BufRead',
       config = function()
         require('ab.plugins.lsp.null-ls')
       end,
-    }
+    },
 
-    use {
+    {
       'kosayoda/nvim-lightbulb',
-      requires = 'antoinemadec/FixCursorHold.nvim',
+      dependencies = { 'antoinemadec/FixCursorHold.nvim' },
       config = function()
         require('nvim-lightbulb').setup({autocmd = {enabled = true}})
       end
-    }
+    },
 
-    use {
+    {
       'weilbith/nvim-code-action-menu',
       cmd = 'CodeActionMenu',
-    }
+    },
 
     -- color themes
-    use('savq/melange')
-    use('p00f/alabaster.nvim')
+    'savq/melange',
+    'p00f/alabaster.nvim',
 
-  end,
-  config = {
-    display = {
-      open_fn = function()
-        return require('packer.util').float({ border = 'single' })
-      end
-    }
-  }
 })
