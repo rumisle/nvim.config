@@ -32,8 +32,8 @@ o.swapfile = false
 o.history = 50
 
 -- set space as leader
-g.mapleader = ' '
-g.maplocalleader = ' '
+g.mapleader = " "
+g.maplocalleader = " "
 
 -- color themes
 -- vim.highlight.create("Pmenu", { guibg = "None", guifg = "None" }, false)

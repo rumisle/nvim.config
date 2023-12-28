@@ -1,5 +1,5 @@
-local nls = require('null-ls')
-local U = require('ab.plugins.lsp.utils')
+local nls = require("null-ls")
+local U = require("ab.plugins.lsp.utils")
 
 local fmt = nls.builtins.formatting
 local dgn = nls.builtins.diagnostics
@@ -12,14 +12,16 @@ nls.setup({
     -- FORMATTING --
     ----------------
     fmt.trim_whitespace.with({
-      filetypes = { 'text', 'zsh', 'toml', 'make', 'conf', 'tmux' },
+      filetypes = { "text", "zsh", "toml", "make", "conf", "tmux" },
     }),
     -- fmt.rustfmt,
-    fmt.stylua,
+    fmt.stylua.with({
+      extra_args = { "--indent-type", "Spaces", "--indent-width", 2 },
+    }),
     -- fmt.gofmt,
     -- fmt.zigfmt,
     fmt.shfmt.with({
-      extra_args = { '-i', 4, '-ci', '-sr' },
+      extra_args = { "-i", 4, "-ci", "-sr" },
     }),
     -----------------
     -- DIAGNOSTICS --
