@@ -49,8 +49,6 @@ if U.has_executable("lua-language-server") then
       },
     },
   })
-else
-  vim.notify("lua-language-server not found in path!", vim.log.levels.WARN, { title = "nvim-config" })
 end
 
 if U.has_executable("rust-analyzer") then
@@ -77,8 +75,6 @@ if U.has_executable("rust-analyzer") then
       },
     },
   })
-else
-  vim.notify("rust-analyzer not found in path!", vim.log.levels.WARN, { title = "nvim-config" })
 end
 
 if U.has_executable("clangd") then
@@ -91,8 +87,6 @@ if U.has_executable("clangd") then
       debounce_text_changes = 500,
     },
   })
-else
-  vim.notify("clangd not found in path!", vim.log.levels.WARN, { title = "nvim-config" })
 end
 
 if U.has_executable("cmake-language-server") then
@@ -101,8 +95,6 @@ if U.has_executable("cmake-language-server") then
     on_attach = on_attach,
     flags = flags,
   })
-else
-  vim.notify("camke-language-server not found in path!", vim.log.levels.WARN, { title = "nvim-config" })
 end
 
 if U.has_executable("ruff-lsp") then
@@ -115,8 +107,6 @@ if U.has_executable("ruff-lsp") then
       },
     },
   })
-else
-  vim.notify("ruff-lsp not found in path.", vim.log.levels.WARN, { title = "nvim-config" })
 end
 
 if U.has_executable("zls") then
@@ -125,6 +115,4 @@ if U.has_executable("zls") then
     on_attach = on_attach,
     flags = flags,
   })
-else
-  vim.notify("zls not found in path!", vim.log.levels.WARN, { title = "nvim-config" })
 end
