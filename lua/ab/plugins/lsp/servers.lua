@@ -116,3 +116,11 @@ if U.has_executable("zls") then
     flags = flags,
   })
 end
+
+if U.has_executable("nixd") then
+  lsp.nixd.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flags,
+  })
+end
