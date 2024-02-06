@@ -16,6 +16,9 @@ require("lazy").setup({
   -- text objects
   { "sgur/vim-textobj-parameter", dependencies = { "kana/vim-textobj-user" } },
 
+  -- treesitter
+  "nvim-treesitter/nvim-treesitter",
+
   -- languages
   {
     "ziglang/zig.vim",
