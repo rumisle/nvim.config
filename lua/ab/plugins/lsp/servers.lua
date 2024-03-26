@@ -140,3 +140,11 @@ if U.has_executable("tailwindcss-language-server") then
     flags = flags,
   })
 end
+
+if U.has_executable("astro-ls") then
+  lsp.astro.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flags,
+  })
+end
