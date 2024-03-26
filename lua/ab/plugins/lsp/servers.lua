@@ -132,3 +132,11 @@ if U.has_executable("tsserver") then
     flags = flags,
   })
 end
+
+if U.has_executable("tailwindcss-language-server") then
+  lsp.tailwindcss.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flags,
+  })
+end
