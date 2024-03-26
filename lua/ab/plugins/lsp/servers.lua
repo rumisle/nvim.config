@@ -124,3 +124,11 @@ if U.has_executable("nixd") then
     flags = flags,
   })
 end
+
+if U.has_executable("tsserver") then
+  lsp.tsserver.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flags,
+  })
+end

@@ -23,6 +23,20 @@ nls.setup({
     fmt.shfmt.with({
       extra_args = { "-i", 4, "-ci", "-sr" },
     }),
+    fmt.prettierd.with({
+      filetypes = {
+        "javascript",
+        "typescript",
+        "json",
+        "yaml",
+        "html",
+        "css",
+        "scss",
+        "markdown",
+        "javascriptreact",
+        "typescriptreact",
+      },
+    }),
     -----------------
     -- DIAGNOSTICS --
     -----------------
