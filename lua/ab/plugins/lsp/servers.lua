@@ -148,3 +148,11 @@ if U.has_executable("astro-ls") then
     flags = flags,
   })
 end
+
+if U.has_executable("mojo-lsp-server") then
+  lsp.mojo.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flags,
+  })
+end

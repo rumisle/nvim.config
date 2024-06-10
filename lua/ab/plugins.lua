@@ -28,6 +28,8 @@ require("lazy").setup({
     end,
   },
 
+  "czheo/mojo.vim",
+
   -- misc
   "andymass/vim-matchup",
   -- 'tpope/vim-endwise',
