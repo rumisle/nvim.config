@@ -9,6 +9,10 @@ local flags = {
 local capabilities = U.capabilities()
 
 local function on_attach(client, buf)
+  if client.name == "ruff_lsp" then
+    -- Disable hover in favor of Pyright
+    client.server_capabilities.hoverProvider = false
+  end
   U.mappings(client, buf)
 end
 
@@ -104,6 +108,25 @@ if U.has_executable("ruff-lsp") then
     init_options = {
       settings = {
         args = {},
+      },
+    },
+  })
+end
+
+if U.has_executable("pyright") then
+  lsp.pyright.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+      pyright = {
+        -- Using Ruff's import organizer
+        disableOrganizeImports = true,
+      },
+      python = {
+        analysis = {
+          -- Ignore all files for analysis to exclusively use Ruff for linting
+          ignore = { "*" },
+        },
       },
     },
   })
