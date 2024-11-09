@@ -17,7 +17,14 @@ require("lazy").setup({
   { "sgur/vim-textobj-parameter", dependencies = { "kana/vim-textobj-user" } },
 
   -- treesitter
-  "nvim-treesitter/nvim-treesitter",
+  {
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      for _, value in ipairs({ "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" }) do
+        vim.treesitter.language.register("glsl", value)
+      end
+    end,
+  },
 
   -- languages
   {

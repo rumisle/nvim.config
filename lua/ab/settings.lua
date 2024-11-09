@@ -43,3 +43,14 @@ vim.cmd("colorscheme lunaperche")
 -- transparent backgruond
 -- vim.highlight.create("Normal", { guibg = "None", guifg = "None" }, false)
 vim.api.nvim_set_hl(0, "Normal", { bg = "None", fg = "None" })
+
+vim.filetype.add({
+  extension = {
+    vert = "glsl",
+    tesc = "glsl",
+    tese = "glsl",
+    frag = "glsl",
+    geom = "glsl",
+    comp = "glsl",
+  },
+})

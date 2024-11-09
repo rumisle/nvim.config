@@ -179,3 +179,11 @@ if U.has_executable("mojo-lsp-server") then
     flags = flags,
   })
 end
+
+if U.has_executable("glsl_analyzer") then
+  lsp.glsl_analyzer.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = flags,
+  })
+end
