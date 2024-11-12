@@ -90,6 +90,10 @@ if U.has_executable("clangd") then
       allow_incremental_sync = true,
       debounce_text_changes = 500,
     },
+    cmd = {
+      "clangd",
+      "--offset-encoding=utf-16",
+    },
   })
 end
 

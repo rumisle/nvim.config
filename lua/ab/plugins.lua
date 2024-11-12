@@ -20,6 +20,14 @@ require("lazy").setup({
   {
     "nvim-treesitter/nvim-treesitter",
     config = function()
+      -- require("nvim-treesitter.configs").setup({
+      --   highlight = {
+      --     ensure_installed = "all",
+      --     auto_install = true,
+      --     enable = true,
+      --     additional_vim_regex_highlighting = false,
+      --   },
+      -- })
       for _, value in ipairs({ "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" }) do
         vim.treesitter.language.register("glsl", value)
       end
