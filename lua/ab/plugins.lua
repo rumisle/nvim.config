@@ -31,6 +31,7 @@ require("lazy").setup({
       for _, value in ipairs({ "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" }) do
         vim.treesitter.language.register("glsl", value)
       end
+      vim.treesitter.language.register("llvm", "ll")
     end,
   },
 

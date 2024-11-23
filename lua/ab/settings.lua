@@ -52,5 +52,7 @@ vim.filetype.add({
     frag = "glsl",
     geom = "glsl",
     comp = "glsl",
+
+    ll = "llvm",
   },
 })
