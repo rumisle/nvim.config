@@ -15,6 +15,8 @@ local bubbles_theme = {
     a = { fg = colors.black, bg = colors.orange },
     b = { fg = colors.white, bg = colors.none },
     c = { fg = colors.violet, bg = colors.none },
+    -- b = { fg = colors.black, bg = colors.none },
+    -- c = { fg = colors.violet, bg = colors.none },
   },
 
   insert = { a = { fg = colors.black, bg = colors.blue } },
@@ -59,3 +61,4 @@ require("lualine").setup({
   tabline = {},
   extensions = {},
 })
+
