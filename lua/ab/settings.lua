@@ -40,6 +40,10 @@ vim.cmd("colorscheme lunaperche")
 -- vim.highlight.create("Normal", { guibg = "None", guifg = "None" }, false)
 vim.api.nvim_set_hl(0, "Normal", { bg = "None", fg = "None" })
 
+-- vim.cmd("hi Normal guibg=none ctermbg=none")
+-- vim.cmd.highlight("Normal guibg=none ctermbg=none")
+-- vim.cmd("hi Normal gui=NONE guifg=NONE guibg=NONE cterm=NONE ctermfg=NONE ctermbg=NONE")
+
 vim.filetype.add({
   extension = {
     vert = "glsl",
