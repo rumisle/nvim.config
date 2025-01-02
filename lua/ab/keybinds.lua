@@ -4,6 +4,11 @@ end
 
 map("n", "*", "*N")
 
+-- set space as leader
+-- map("", "<Space>", "<Nop>")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- reload configs
 map("n", "<leader>r", ":luafile $MYVIMRC<CR>")
 map("n", "<leader>l", ":Lazy profile<CR>")
