@@ -44,19 +44,6 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "None", fg = "None" })
 -- vim.cmd.highlight("Normal guibg=none ctermbg=none")
 -- vim.cmd("hi Normal gui=NONE guifg=NONE guibg=NONE cterm=NONE ctermfg=NONE ctermbg=NONE")
 
-vim.filetype.add({
-  extension = {
-    vert = "glsl",
-    tesc = "glsl",
-    tese = "glsl",
-    frag = "glsl",
-    geom = "glsl",
-    comp = "glsl",
-
-    ll = "llvm",
-  },
-})
-
 -- use OSC 52 to copy to system clipboard
 g.clipboard = {
   name = 'OSC 52',
