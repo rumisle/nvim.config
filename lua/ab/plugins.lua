@@ -225,7 +225,7 @@ require("lazy").setup({
 
   "wellle/context.vim",
 
-  "github/copilot.vim",
+  -- "github/copilot.vim",
 
   -- lsp
   "hrsh7th/cmp-nvim-lsp",
