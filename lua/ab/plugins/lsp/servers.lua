@@ -9,7 +9,7 @@ local flags = {
 local capabilities = U.capabilities()
 
 local function on_attach(client, buf)
-  if client.name == "ruff_lsp" then
+  if client.name == "ruff" then
     -- Disable hover in favor of Pyright
     client.server_capabilities.hoverProvider = false
   end
@@ -105,8 +105,8 @@ if U.has_executable("cmake-language-server") then
   })
 end
 
-if U.has_executable("ruff-lsp") then
-  lsp.ruff_lsp.setup({
+if U.has_executable("ruff") then
+  lsp.ruff.setup({
     capabilities = capabilities,
     on_attach = on_attach,
     init_options = {
