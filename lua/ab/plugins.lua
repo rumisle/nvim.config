@@ -231,16 +231,13 @@ require("lazy").setup({
   "hrsh7th/cmp-nvim-lsp",
 
   {
-    "lvimuser/lsp-inlayhints.nvim",
-    config = function()
-      require("lsp-inlayhints").setup()
-      -- require("lsp-inlayhints").on_attach(client, bufnr)
-    end,
-  },
-
-  {
     "neovim/nvim-lspconfig",
     -- event = 'BufRead',
+    opts = {
+      inlay_hints = {
+        enable = true
+      },
+    },
     config = function()
       require("ab.plugins.lsp.servers")
     end,

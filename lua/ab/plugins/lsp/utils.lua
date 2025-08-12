@@ -48,8 +48,6 @@ function U.mappings(client, buf)
       vim.lsp.buf.format({ async = true })
     end, { desc = "range format" })
   end
-
-  require("lsp-inlayhints").on_attach(client, buf)
 end
 
 return U
