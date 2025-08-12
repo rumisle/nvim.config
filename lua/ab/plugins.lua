@@ -256,7 +256,7 @@ require("lazy").setup({
   { "hrsh7th/cmp-buffer" },
 
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     event = "BufRead",
     config = function()
       require("ab.plugins.lsp.null-ls")
