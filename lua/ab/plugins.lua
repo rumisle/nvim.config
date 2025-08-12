@@ -235,7 +235,7 @@ require("lazy").setup({
     -- event = 'BufRead',
     opts = {
       inlay_hints = {
-        enable = true
+        enable = true,
       },
     },
     config = function()
@@ -261,6 +261,15 @@ require("lazy").setup({
     config = function()
       require("ab.plugins.lsp.null-ls")
     end,
+  },
+
+  {
+    {
+      "nvimtools/none-ls.nvim",
+      dependencies = {
+        "gbprod/none-ls-shellcheck.nvim",
+      },
+    },
   },
 
   {

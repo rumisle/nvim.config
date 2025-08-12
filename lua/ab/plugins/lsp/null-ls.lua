@@ -37,14 +37,14 @@ nls.setup({
     -----------------
     -- DIAGNOSTICS --
     -----------------
-    dgn.shellcheck,
+    require("none-ls-shellcheck.diagnostics"),
     -- dgn.luacheck.with({
     --   extra_args = { '--globals', 'vim', '--std', 'luajit' },
     -- }),
     ------------------
     -- CODE ACTIONS --
     ------------------
-    -- cda.shellcheck, -- (use bashls / available in gbprod/none-ls-shellcheck.nvim)
+    require("none-ls-shellcheck.code_actions"),
     -----------------
     -- COMPLETIONS --
     -----------------
