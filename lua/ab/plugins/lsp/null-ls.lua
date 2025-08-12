@@ -44,7 +44,7 @@ nls.setup({
     ------------------
     -- CODE ACTIONS --
     ------------------
-    cda.shellcheck,
+    -- cda.shellcheck, -- (use bashls / available in gbprod/none-ls-shellcheck.nvim)
     -----------------
     -- COMPLETIONS --
     -----------------
