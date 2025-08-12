@@ -11,9 +11,6 @@ nls.setup({
     ----------------
     -- FORMATTING --
     ----------------
-    fmt.trim_whitespace.with({
-      filetypes = { "text", "zsh", "toml", "make", "conf", "tmux" },
-    }),
     -- fmt.rustfmt,
     fmt.stylua.with({
       extra_args = { "--indent-type", "Spaces", "--indent-width", 2 },
